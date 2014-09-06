@@ -16,6 +16,11 @@ will set warning if the datestamp is just over a week old, and critical if the d
 
 The use case for this is to monitor some backup scripts running on a server - to make sure that they're running when they're supposed to, and to make sure we're not going too long without a backup. 
 
+## Example Output
+    OK - 49103 seconds (0 days, 13:38:23) since last run 
+    WARNING - 135457 seconds (1 days, 13:37:37) since last run 
+    CRITICAL - 399477 seconds (4 days, 14:57:57) since last run 
+
 # Installation
 Copy a binary of `check_datestamp` (appropriate for your platform) to `/usr/lib/nagios/plugins/check_datestamp` Copy `datestamp.cfg` to your plugins config directory (in my instance, it's `/etc/nagios-plugins/config/`), restart nagios, and set up the files that need monitoring as services. 
 
